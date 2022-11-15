@@ -76,7 +76,7 @@ public class MenuEm extends javax.swing.JFrame {
         });
         jPanel1.add(bo_re, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bo_tic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ticket.png"))); // NOI18N
+        bo_tic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ticket.png"))); // NOI18N
         bo_tic.setBorder(null);
         bo_tic.setBorderPainted(false);
         bo_tic.setContentAreaFilled(false);
@@ -87,7 +87,7 @@ public class MenuEm extends javax.swing.JFrame {
                 bo_ticActionPerformed(evt);
             }
         });
-        jPanel1.add(bo_tic, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, -1, -1));
+        jPanel1.add(bo_tic, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 120, 120));
 
         bo_art.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Articulos.png"))); // NOI18N
         bo_art.setBorder(null);

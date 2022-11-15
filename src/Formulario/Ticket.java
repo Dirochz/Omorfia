@@ -723,17 +723,22 @@ public final class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_toKeyTyped
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        // TODO add your handling code here:
-        double precio_a_eliminar = (double) productos_vendidos.get(id_para_eliminar)[2];
-        int cant_a_eliminar = (int) productos_vendidos.get(id_para_eliminar)[3];
-        double subtotal_a_eliminar = precio_a_eliminar * cant_a_eliminar;
-        his = his - subtotal_a_eliminar;
-        cont--;
-        productos_vendidos.remove(id_para_eliminar);
-        modelo = (DefaultTableModel)ca.getModel();
-        modelo.removeRow(id_para_eliminar);
-        ca.setModel(modelo);
-        to.setText(String.format("%.2f",his));                                      
+        int fila = ca.getSelectedRow();
+        if(fila>-1){
+            double precio_a_eliminar = (double) productos_vendidos.get(id_para_eliminar)[2];
+            int cant_a_eliminar = (int) productos_vendidos.get(id_para_eliminar)[3];
+            double subtotal_a_eliminar = precio_a_eliminar * cant_a_eliminar;
+            his = his - subtotal_a_eliminar;
+            cont--;
+            productos_vendidos.remove(id_para_eliminar);
+            modelo = (DefaultTableModel)ca.getModel();
+            modelo.removeRow(id_para_eliminar);
+            ca.setModel(modelo);
+            to.setText(String.format("%.2f",his));  
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Seleccione un Producto");
+        }                                 
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void caMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caMouseClicked

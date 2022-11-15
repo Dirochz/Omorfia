@@ -5,6 +5,8 @@ import Formulario.Articulo;
 import Formulario.InUsu;
 import Formulario.Inventario;
 import Formulario.Login;
+import Formulario.Menu;
+import Formulario.MenuEm;
 import Formulario.Proveedor;
 import Formulario.Ticket;
 import Formulario.Usuario;
@@ -38,5 +40,11 @@ public class Omorfia {
         
         Login l = new Login();
         l.setVisible(true);
+        
+        Menu m = new Menu();
+        m.setVisible(true);
+        
+        MenuEm me = new MenuEm();
+        me.setVisible(true);
     } 
 }

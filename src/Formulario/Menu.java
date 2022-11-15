@@ -143,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
                 Bo_TicActionPerformed(evt);
             }
         });
-        jPanel1.add(Bo_Tic, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 110, 110));
+        jPanel1.add(Bo_Tic, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 120, 120));
 
         txt_pro.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         txt_pro.setForeground(new java.awt.Color(0, 0, 0));

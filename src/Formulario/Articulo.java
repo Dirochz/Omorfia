@@ -288,14 +288,19 @@ public final class Articulo extends javax.swing.JFrame {
 
   private void moActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moActionPerformed
     int fila = art.getSelectedRow();
-    id_ar = Integer.parseInt(this.art.getValueAt(fila,0).toString());
-    imagen ar = null;
-    try {
-      ar = new imagen();
-    } catch (IOException ex) {
-      Logger.getLogger(Articulo.class.getName()).log(Level.SEVERE, null, ex);
+    if(fila>-1){
+        id_ar = Integer.parseInt(this.art.getValueAt(fila,0).toString());
+        imagen ar = null;
+        try {
+            ar = new imagen();
+        }catch (IOException ex) {
+            Logger.getLogger(Articulo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ar.setVisible(true); 
     }
-    ar.setVisible(true); 
+    else{
+        JOptionPane.showMessageDialog(null,"Seleccione un Producto");
+    }
   }//GEN-LAST:event_moActionPerformed
 
   private void txt_buActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buActionPerformed

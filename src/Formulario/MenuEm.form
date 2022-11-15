@@ -81,7 +81,7 @@
         <Component class="javax.swing.JButton" name="bo_tic">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/ticket.png"/>
+              <Image iconType="3" name="/Imagenes/Ticket.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -98,7 +98,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="650" y="130" width="-1" height="-1"/>
+              <AbsoluteConstraints x="650" y="130" width="120" height="120"/>
             </Constraint>
           </Constraints>
         </Component>
