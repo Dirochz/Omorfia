@@ -9,7 +9,6 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_CANCEL_OPTION;
 
 public class Agpro extends javax.swing.JFrame {
-
     int resp;
     public Agpro() {
         initComponents();

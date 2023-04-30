@@ -98,7 +98,7 @@ public class Usuario extends javax.swing.JFrame {
         jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
 
         txt_nom.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_nom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_nom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nomActionPerformed(evt);
@@ -112,7 +112,7 @@ public class Usuario extends javax.swing.JFrame {
         jPanel1.add(txt_nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 230, -1));
 
         txt_Appa.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_Appa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_Appa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_Appa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_AppaKeyTyped(evt);
@@ -121,7 +121,7 @@ public class Usuario extends javax.swing.JFrame {
         jPanel1.add(txt_Appa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 230, -1));
 
         txt_Apma.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_Apma.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_Apma.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_Apma.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_ApmaKeyTyped(evt);
@@ -130,7 +130,7 @@ public class Usuario extends javax.swing.JFrame {
         jPanel1.add(txt_Apma, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 230, -1));
 
         txt_correo.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_correo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_correo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_correoActionPerformed(evt);
@@ -140,7 +140,7 @@ public class Usuario extends javax.swing.JFrame {
 
         Aceptar.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         Aceptar.setText("Aceptar");
-        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Aceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarActionPerformed(evt);
@@ -155,7 +155,7 @@ public class Usuario extends javax.swing.JFrame {
         bo_reg.setBorder(null);
         bo_reg.setBorderPainted(false);
         bo_reg.setContentAreaFilled(false);
-        bo_reg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bo_reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bo_reg.setFocusPainted(false);
         bo_reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,11 +169,11 @@ public class Usuario extends javax.swing.JFrame {
 
         box_tipo.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         box_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Admin", "Empleado", " " }));
-        box_tipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        box_tipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(box_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 140, 40));
 
         txt_contra.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_contra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_contra.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(txt_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 240, -1));
 
         Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/m3.png"))); // NOI18N

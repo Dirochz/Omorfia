@@ -5,7 +5,6 @@ import java.sql.*;
 import omorfia.Conexion;
 
 public class Menu extends javax.swing.JFrame {
-    
     String user, Nombre, Appa, Apma; //declara las variables
     
     public Menu() {

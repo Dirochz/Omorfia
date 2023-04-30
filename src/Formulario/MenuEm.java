@@ -67,7 +67,7 @@ public class MenuEm extends javax.swing.JFrame {
         bo_re.setBorder(null);
         bo_re.setBorderPainted(false);
         bo_re.setContentAreaFilled(false);
-        bo_re.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bo_re.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bo_re.setFocusPainted(false);
         bo_re.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +80,7 @@ public class MenuEm extends javax.swing.JFrame {
         bo_tic.setBorder(null);
         bo_tic.setBorderPainted(false);
         bo_tic.setContentAreaFilled(false);
-        bo_tic.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bo_tic.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bo_tic.setFocusPainted(false);
         bo_tic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class MenuEm extends javax.swing.JFrame {
         bo_art.setBorder(null);
         bo_art.setBorderPainted(false);
         bo_art.setContentAreaFilled(false);
-        bo_art.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bo_art.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bo_art.setFocusPainted(false);
         bo_art.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

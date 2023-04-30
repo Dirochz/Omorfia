@@ -17,14 +17,12 @@ import javax.swing.table.DefaultTableModel;
 import omorfia.Conexion;
 
 public final class Articulo extends javax.swing.JFrame {
-
     static int ida;
     String tipo, bus;
     public static int id_ar = 0;
     DefaultTableModel modelo;
     int id,ma,ca,resp;
     Double pr;
-    
     public Articulo() {
         initComponents();
         setTitle("Articulo");//titulo que tendra
@@ -32,7 +30,7 @@ public final class Articulo extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); // centra la interfaz cuando se ejecuta       
         eliart();
     }
-    
+ 
     void Mod(){
         int fila = art.getSelectedRow();
         id = Integer.parseInt(this.art.getValueAt(fila,0).toString());
@@ -150,7 +148,15 @@ public final class Articulo extends javax.swing.JFrame {
             new String [] {
                 "ID", "Nombre", "Marca", "Talla", "Cantidad", "Precio", "Descripcion"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         art.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         art.setRowHeight(40);
         jScrollPane1.setViewportView(art);
@@ -171,6 +177,7 @@ public final class Articulo extends javax.swing.JFrame {
         mo.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         mo.setForeground(new java.awt.Color(0, 0, 0));
         mo.setText("Mostrar");
+        mo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moActionPerformed(evt);
@@ -186,6 +193,7 @@ public final class Articulo extends javax.swing.JFrame {
         jPanel1.add(txt_bu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 22, 330, -1));
 
         bu.setText("Buscar");
+        bu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buActionPerformed(evt);
@@ -251,12 +259,12 @@ public final class Articulo extends javax.swing.JFrame {
 
     private void bo_eliartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bo_eliartActionPerformed
         int fila = art.getSelectedRow();
-        String ida = art.getValueAt(fila, 0).toString();
         try{
             if(fila<0){
                 JOptionPane.showMessageDialog(null,"Seleccione un Articulo");               
             }
             else{ 
+                String ida = art.getValueAt(fila, 0).toString();
                 ImageIcon icon = new ImageIcon("src\\iconos\\Eliucon.png"); 
                 //el cuadro de confirmacion (1,2,3,4,5,6)
                 //2. es el texto que tendra
@@ -280,10 +288,16 @@ public final class Articulo extends javax.swing.JFrame {
     }//GEN-LAST:event_bo_eliartActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        Mod();
-        Articulo ea = new Articulo();
-        ea.setVisible(true); 
-        this.setVisible(false); 
+        int fila = art.getSelectedRow();
+        if(fila<0){
+            JOptionPane.showMessageDialog(null,"Seleccione un Articulo");               
+        }
+        else{
+            Mod(); 
+            Articulo ea = new Articulo();
+            ea.setVisible(true); 
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_modActionPerformed
 
   private void moActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moActionPerformed
@@ -317,7 +331,7 @@ public final class Articulo extends javax.swing.JFrame {
           query = "select * from img";// selecciona el tipo y checa si el usuario y la contra es la misma que la interfaz            
         }
         else{
-          query = "select * from img Where ID ='"+bus+"'";
+          query = "select * from img Where ID ='"+bus+"' or Nombre='"+bus+"' or id_marca='"+bus+"' or Talla='"+bus+"' or Cantidad='"+bus+"' or Precio='"+bus+"' or Descripcion";
         }
         PreparedStatement pst = cn.prepareStatement(query);
         ResultSet rs = pst.executeQuery();// Para consultas con Query, el tipo de retorno es tabla bidimensional       

@@ -191,7 +191,7 @@ public final class AgArt extends javax.swing.JFrame {
         txt_des.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(txt_des);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 650, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 650, 100));
 
         ma_box.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         ma_box.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -275,6 +275,7 @@ public final class AgArt extends javax.swing.JFrame {
                 id_em = rs.getInt("ID");   
         }
         }catch(SQLException e){
+            System.out.println("Empresa: "+e);
         }
         try{
             if(!nom.equals("") && !prec.equals("0") && !can.equals("0") && !ta.equals("Seleccionar") && !n.equals("") && !ma.equals("Seleccionar")){ 
@@ -335,6 +336,7 @@ public final class AgArt extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Debes llenar todos los campos");//sale un cuadro de dialogo diciendo que debes llenar los campos
         }   
         }catch (HeadlessException | FileNotFoundException | SQLException e){      
+            System.out.println("agregar: "+e);
         }       
     }//GEN-LAST:event_bo_AceActionPerformed
 

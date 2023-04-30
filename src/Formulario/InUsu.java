@@ -1,4 +1,3 @@
-
 package Formulario;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -12,7 +11,6 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 import javax.swing.table.DefaultTableModel;
 import omorfia.Conexion;
-
 
 public final class InUsu extends javax.swing.JFrame {
     int id;
@@ -43,28 +41,29 @@ public final class InUsu extends javax.swing.JFrame {
     } 
     
     void tusuario(){
-    modelo = (DefaultTableModel)us.getModel();
-    us.setModel(modelo);
-    Object[] usuario = new Object[7];
-    try{
-    Connection cn = Conexion.conectar();//se conecta a la base de datos
-    PreparedStatement pst = cn.prepareStatement("select ID,Tipo,Nombre,ApellidoPa,ApellidoMa,correo,contraseña from usuario");// selecciona el tipo y checa si el usuario y la contra es la misma que la interfaz
-    ResultSet rs = pst.executeQuery();// Para consultas con Query, el tipo de retorno es tabla bidimensional
-    while(rs.next()){// Devuelve verdadero, significa que hay datos para leer
+        modelo = (DefaultTableModel)us.getModel();
+        us.setModel(modelo);
+        Object[] usuario = new Object[7];
+        try{
+            Connection cn = Conexion.conectar();//se conecta a la base de datos
+            PreparedStatement pst = cn.prepareStatement("select ID,Tipo,Nombre,ApellidoPa,ApellidoMa,correo,contraseña from usuario");// selecciona el tipo y checa si el usuario y la contra es la misma que la interfaz
+            ResultSet rs = pst.executeQuery();// Para consultas con Query, el tipo de retorno es tabla bidimensional
+            while(rs.next()){// Devuelve verdadero, significa que hay datos para leer
 
-        usuario[0] = rs.getInt("ID");
-        usuario[1] = rs.getString("Tipo");
-        usuario[2] = rs.getString("Nombre");
-        usuario[3] = rs.getString("ApellidoPa");
-        usuario[4] = rs.getString("ApellidoMa");
-        usuario[5] = rs.getString("correo");
-        usuario[6] = rs.getString("contraseña");
-        modelo.addRow(usuario);
+                usuario[0] = rs.getInt("ID");
+                usuario[1] = rs.getString("Tipo");
+                usuario[2] = rs.getString("Nombre");
+                usuario[3] = rs.getString("ApellidoPa");
+                usuario[4] = rs.getString("ApellidoMa");
+                usuario[5] = rs.getString("correo");
+                usuario[6] = rs.getString("contraseña");
+                modelo.addRow(usuario);
+            }
+            us.setModel(modelo);
+        }catch(Exception e){
+        }
     }
-    us.setModel(modelo);
-    }catch(Exception e){
-    }
-}
+    
     @Override //hace que compile esto primero 
     public Image getIconImage(){ //que la variable imagen obtendra lo que este en IconImage
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("iconos/logo.png"));//hace que el icono de la interfaz cambie al lo que agregamos en iconImage
@@ -199,12 +198,12 @@ public final class InUsu extends javax.swing.JFrame {
 
     private void Bo_EliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bo_EliActionPerformed
         int fila = us.getSelectedRow(),resp;
-        String id = us.getValueAt(fila,0).toString();
         try{
             if(fila<0){
                 JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
             }
             else{ 
+                String id = us.getValueAt(fila,0).toString();
                 ImageIcon icon = new ImageIcon("src\\iconos\\Eliucon.png");
                 resp = JOptionPane.showConfirmDialog(null,"¿Seguro que quiere eliminar este usuario?","Eliminar Usuario",YES_NO_OPTION,INFORMATION_MESSAGE,icon);
                 if(resp==0){
@@ -226,10 +225,17 @@ public final class InUsu extends javax.swing.JFrame {
     }//GEN-LAST:event_usKeyReleased
 
     private void bo_modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bo_modActionPerformed
-       Mod();
-       InUsu po = new InUsu(); 
-       po.setVisible(true); 
-       this.setVisible(false);
+       int fila = us.getSelectedRow();
+       if(fila<0){
+            JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
+       }
+       else{
+            Mod();
+            InUsu po = new InUsu(); 
+            po.setVisible(true); 
+            this.setVisible(false);
+       }
+       
     }//GEN-LAST:event_bo_modActionPerformed
 
     public static void main(String args[]) {

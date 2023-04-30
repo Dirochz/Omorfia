@@ -63,6 +63,7 @@ public final class imagen extends javax.swing.JFrame {
 
         reg.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         reg.setText("Regresar");
+        reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 regActionPerformed(evt);

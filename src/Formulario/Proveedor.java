@@ -1,4 +1,5 @@
 package Formulario;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -58,7 +59,7 @@ public final class Proveedor extends javax.swing.JFrame {
             modelo.addRow(prove);
         }
         Po.setModel(modelo);    
-        }catch(Exception e){           
+        }catch(SQLException e){           
         }
     }
     
@@ -190,12 +191,12 @@ public final class Proveedor extends javax.swing.JFrame {
 
     private void bo_elipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bo_elipoActionPerformed
         int fila = Po.getSelectedRow(),resp;
-        String id = Po.getValueAt(fila,0).toString();
         try{
             if(fila<0){
                 JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
             }
             else{ 
+                String id = Po.getValueAt(fila,0).toString();
                 ImageIcon icon = new ImageIcon("src\\iconos\\Eliucon.png");
                 resp = JOptionPane.showConfirmDialog(null,"¿Seguro que quiere eliminar este Proveedor?","Eliminar Proveedor",YES_NO_OPTION,INFORMATION_MESSAGE,icon);
                 if(resp==0){
@@ -213,10 +214,19 @@ public final class Proveedor extends javax.swing.JFrame {
     }//GEN-LAST:event_bo_elipoActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        Mod();
-        Proveedor po = new Proveedor(); // declarar y llamar a la interfaz que quieres ir
-        po.setVisible(true); // te mostrara lo que declarate en la variable 
-        this.setVisible(false); //te oculta esta interfaz  
+        int fila = Po.getSelectedRow();
+        try{
+            if(fila<0){
+                JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
+            }
+            else{ 
+                Mod();
+                Proveedor po = new Proveedor(); // declarar y llamar a la interfaz que quieres ir
+                po.setVisible(true); // te mostrara lo que declarate en la variable 
+                this.setVisible(false); //te oculta esta interfaz  
+            }
+        }catch(HeadlessException e){           
+        }
     }//GEN-LAST:event_modActionPerformed
 
     /**

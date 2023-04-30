@@ -72,7 +72,7 @@ public final class Login extends javax.swing.JFrame {
         bo_ing.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         bo_ing.setForeground(new java.awt.Color(255, 255, 255));
         bo_ing.setText("Ingresar");
-        bo_ing.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bo_ing.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bo_ing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bo_ingActionPerformed(evt);
@@ -81,7 +81,7 @@ public final class Login extends javax.swing.JFrame {
         jPanel1.add(bo_ing, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 110, 30));
 
         txt_usu.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txt_usu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt_usu.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_usu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_usuKeyTyped(evt);
@@ -90,11 +90,11 @@ public final class Login extends javax.swing.JFrame {
         jPanel1.add(txt_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 150, 40));
 
         txt_con.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jPanel1.add(txt_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 170, 30));
+        jPanel1.add(txt_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 150, 30));
 
         co_tip.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         co_tip.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Admin", "Empleado" }));
-        co_tip.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        co_tip.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(co_tip, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 160, 40));
 
         contra.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N

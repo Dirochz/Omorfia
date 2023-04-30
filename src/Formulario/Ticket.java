@@ -1,7 +1,6 @@
 package Formulario;
 import static Formulario.Login.tip;
 import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.FontFactory;
@@ -14,7 +13,6 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,8 +24,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList; // import the ArrayList class
 import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import omorfia.Conexion;
 
 public final class Ticket extends javax.swing.JFrame {
@@ -113,8 +109,6 @@ public final class Ticket extends javax.swing.JFrame {
         ca = new javax.swing.JTable();
         ven = new javax.swing.JComboBox<>();
         pag = new javax.swing.JTextField();
-        cam = new javax.swing.JTextField();
-        to = new javax.swing.JTextField();
         pro = new javax.swing.JTextField();
         ticket = new javax.swing.JButton();
         Producto = new javax.swing.JLabel();
@@ -138,6 +132,8 @@ public final class Ticket extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
         Fondo2 = new javax.swing.JLabel();
         Fondo1 = new javax.swing.JLabel();
+        cam = new javax.swing.JLabel();
+        to = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -152,7 +148,7 @@ public final class Ticket extends javax.swing.JFrame {
         Regresar.setBorder(null);
         Regresar.setBorderPainted(false);
         Regresar.setContentAreaFilled(false);
-        Regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Regresar.setFocusPainted(false);
         Regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +179,7 @@ public final class Ticket extends javax.swing.JFrame {
 
         ven.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         ven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Diego", "Juan", "Diogo", "Karen", "Jesus" }));
-        ven.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 venActionPerformed(evt);
@@ -204,27 +200,6 @@ public final class Ticket extends javax.swing.JFrame {
         });
         jPanel1.add(pag, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 130, 170, 40));
 
-        cam.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        cam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                camActionPerformed(evt);
-            }
-        });
-        cam.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                camKeyTyped(evt);
-            }
-        });
-        jPanel1.add(cam, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 210, 170, 40));
-
-        to.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        to.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                toKeyTyped(evt);
-            }
-        });
-        jPanel1.add(to, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 160, 50));
-
         pro.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         pro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -235,7 +210,7 @@ public final class Ticket extends javax.swing.JFrame {
 
         ticket.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         ticket.setText("Generar Ticket");
-        ticket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ticket.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ticket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ticketActionPerformed(evt);
@@ -303,7 +278,7 @@ public final class Ticket extends javax.swing.JFrame {
 
         agregar.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         agregar.setText("Agregar");
-        agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarActionPerformed(evt);
@@ -314,6 +289,7 @@ public final class Ticket extends javax.swing.JFrame {
 
         Inf.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         Inf.setText("Informacion");
+        Inf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Inf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InfActionPerformed(evt);
@@ -336,7 +312,7 @@ public final class Ticket extends javax.swing.JFrame {
 
         eliminar.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         eliminar.setText("Eliminar");
-        eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
@@ -357,6 +333,7 @@ public final class Ticket extends javax.swing.JFrame {
             }
         ));
         art.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        art.setEnabled(false);
         art.setRowHeight(40);
         jScrollPane1.setViewportView(art);
 
@@ -386,6 +363,14 @@ public final class Ticket extends javax.swing.JFrame {
 
         Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/me1.png"))); // NOI18N
         jPanel1.add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 190, 170));
+
+        cam.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        cam.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(cam, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 210, 160, 40));
+
+        to.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        to.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(to, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 256, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -430,10 +415,6 @@ public final class Ticket extends javax.swing.JFrame {
     private void pagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pagActionPerformed
-
-    private void camActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_camActionPerformed
 
     private void cantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantActionPerformed
         // TODO add your handling code here:
@@ -567,9 +548,10 @@ public final class Ticket extends javax.swing.JFrame {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/"+cli+".pdf"));
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -635,6 +617,7 @@ public final class Ticket extends javax.swing.JFrame {
             redes.setFont(FontFactory.getFont("Tahoma",14,Font.BOLD, BaseColor.DARK_GRAY));
             
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(local);
@@ -660,9 +643,7 @@ public final class Ticket extends javax.swing.JFrame {
             documento.add(linea);
             documento.close();
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-                Logger.getLogger(Ticket.class.getName()).log(Level.SEVERE, null, ex);
-            }  
+        } 
         }  
         else{
             JOptionPane.showMessageDialog(null,"Saldo Insuficiente");
@@ -702,12 +683,6 @@ public final class Ticket extends javax.swing.JFrame {
         if((c<'0' || c>'9') && (c!='.'))evt.consume(); //esto permite solo escribir numeros
     }//GEN-LAST:event_pagKeyTyped
 
-    private void camKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_camKeyTyped
-        //cambio
-        char c = evt.getKeyChar();        
-        if((c<'0' || c>'9') && (c!='.'))evt.consume(); //esto permite solo escribir numeros
-    }//GEN-LAST:event_camKeyTyped
-
     private void clienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clienteKeyTyped
        //Nombre
         char c = evt.getKeyChar(); //se crea un caracter c         
@@ -715,12 +690,6 @@ public final class Ticket extends javax.swing.JFrame {
            && (c !='á') && (c !='é') && (c !='í') && (c !='ó') && (c !='ú') && (c !='ñ')&& (c !='Ñ')
            && (c != (char) KeyEvent.VK_SPACE))evt.consume(); // esto permite que solo se pueda escribir letras
     }//GEN-LAST:event_clienteKeyTyped
-
-    private void toKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_toKeyTyped
-        //Total
-        char c = evt.getKeyChar();        
-        if((c<'0' || c>'9') && (c!='.'))evt.consume(); //esto permite solo escribir numeros
-    }//GEN-LAST:event_toKeyTyped
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         int fila = ca.getSelectedRow();
@@ -804,7 +773,7 @@ public final class Ticket extends javax.swing.JFrame {
     private javax.swing.JTable art;
     private javax.swing.JLabel c;
     private javax.swing.JTable ca;
-    private javax.swing.JTextField cam;
+    private javax.swing.JLabel cam;
     private javax.swing.JLabel cambio;
     private javax.swing.JLabel cambio1;
     private javax.swing.JTextField cant;
@@ -817,7 +786,7 @@ public final class Ticket extends javax.swing.JFrame {
     private javax.swing.JTextField pro;
     private javax.swing.JInternalFrame tabla;
     private javax.swing.JButton ticket;
-    private javax.swing.JTextField to;
+    private javax.swing.JLabel to;
     private javax.swing.JLabel total;
     private javax.swing.JComboBox<String> ven;
     private javax.swing.JLabel vendedor;

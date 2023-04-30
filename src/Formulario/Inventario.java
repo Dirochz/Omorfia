@@ -1,7 +1,5 @@
 package Formulario;
-import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chunk;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -19,13 +17,9 @@ import java.awt.Font;
 import java.awt.HeadlessException;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import omorfia.Conexion;
 
 public class Inventario extends javax.swing.JFrame {
-
     public Inventario() {
         initComponents();
         setTitle("Inventario");
@@ -191,14 +185,14 @@ public class Inventario extends javax.swing.JFrame {
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
         Document documento = new Document();
-       
         try {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Usuario.pdf"));
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -210,6 +204,7 @@ public class Inventario extends javax.swing.JFrame {
             Titulo.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(Titulo);
@@ -222,7 +217,7 @@ public class Inventario extends javax.swing.JFrame {
             tabla.addCell("Apellido Materno");
             tabla.addCell("Correo");
             tabla.addCell("Contraseña");
-            
+           
             try {
                 Connection cn = Conexion.conectar();
                 PreparedStatement pst = cn.prepareStatement("select * from usuario");    
@@ -246,8 +241,6 @@ public class Inventario extends javax.swing.JFrame {
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_UsuariosActionPerformed
 
@@ -258,9 +251,10 @@ public class Inventario extends javax.swing.JFrame {
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Proveedores.pdf"));
             Paragraph Titulo = new Paragraph();
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -271,6 +265,7 @@ public class Inventario extends javax.swing.JFrame {
             Titulo.setFont(FontFactory.getFont("Tahoma",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(Titulo);
@@ -301,8 +296,6 @@ public class Inventario extends javax.swing.JFrame {
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ProActionPerformed
 
@@ -312,9 +305,10 @@ public class Inventario extends javax.swing.JFrame {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Articulos.pdf"));
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -326,6 +320,7 @@ public class Inventario extends javax.swing.JFrame {
             Titulo.setFont(FontFactory.getFont("Tahoma",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(Titulo);
@@ -362,8 +357,6 @@ public class Inventario extends javax.swing.JFrame {
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ArticulosActionPerformed
 
@@ -373,9 +366,10 @@ public class Inventario extends javax.swing.JFrame {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Ventas.pdf"));
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -387,6 +381,7 @@ public class Inventario extends javax.swing.JFrame {
             Titulo.setFont(FontFactory.getFont("Tahoma",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(Titulo);
@@ -416,8 +411,6 @@ public class Inventario extends javax.swing.JFrame {
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_his_venActionPerformed
 
@@ -427,9 +420,10 @@ public class Inventario extends javax.swing.JFrame {
             String ruta = System.getProperty("user.home");
             PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Pedido.pdf"));
             
-            com.itextpdf.text.Image header = com.itextpdf.text.Image.getInstance("src/Imagenes/logo.jpeg");
-            header.scaleToFit(100,100);
-            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph header = new Paragraph();
+            header.setAlignment(Paragraph.ALIGN_CENTER);
+            header.add("\n\nD'Amelia Boutique\n\n");
+            header.setFont(FontFactory.getFont("Arial",30,Font.BOLD, BaseColor.DARK_GRAY));
             
             Paragraph linea = new Paragraph();
             linea.setAlignment(Paragraph.ALIGN_CENTER);
@@ -441,6 +435,7 @@ public class Inventario extends javax.swing.JFrame {
             Titulo.setFont(FontFactory.getFont("Tahoma",30,Font.BOLD, BaseColor.DARK_GRAY));
            
             documento.open();
+            documento.add(linea);
             documento.add(header);
             documento.add(linea);
             documento.add(Titulo);
@@ -472,9 +467,7 @@ public class Inventario extends javax.swing.JFrame {
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
-        } catch (IOException ex) {
-            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }//GEN-LAST:event_PedidosActionPerformed
 
     public static void main(String args[]) {
