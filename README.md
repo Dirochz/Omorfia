@@ -1,7 +1,6 @@
 # Omorfia
 <p>Sistema de Inventario y Ventas de una Boutique para tienda en Fisico</p>
 <p>Materia: POO y Taller de POO</p>
-
 ## Creadores
 <p>V1:</p>
 <ul>
@@ -22,5 +21,5 @@
   <li>Francisco Aldair Gonzalez Galaviz</li> 
   <li>Carlos Javier Herrera Koppas</li>
 </ul>
-<p>Para usar el sistema: Descargar Carpeta "Manual" e Instalar el setup o usar el portable</p>
-<p>LEER: <a href:"">Omorfia.pdf</a></p>
+<p>Para usar el sistema: Descargar Carpeta <a href="https://github.com/Dirochz/Omorfia/tree/master/Manual">"Manual"</a> e Instalar el setup o usar el portable</p>
+<p>LEER: <a href = "https://github.com/Dirochz/Omorfia/blob/master/Manual/Omorfia.pdf">Omorfia.pdf</a></p>
