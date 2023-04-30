@@ -1,20 +1,26 @@
 # Omorfia
-Sistema de Inventario y Ventas de una Boutique para tienda en Fisico
-Materia: POO y Taller de POO
-Creadore: V1 
-Diego Rodríguez Chávez 
-Juan Diego Molina Rodríguez
-Karen Lizbeth Álvarez Cabrera
-Jesús Mario Martínez Reyna
-Diogo Said Zuñiga Santoscoy
-Héctor Mauricio Flores Martinez 
+<p>Sistema de Inventario y Ventas de una Boutique para tienda en Fisico</p>
+<p>Materia: POO y Taller de POO</p>
 
-V2:
-Cristopher Alan Ayala Ochoa
-Dana Montserrat Cisneros Hidalgo
-Juan Francisco Bailon Perez
-Emiliano Cepeda Montemayor
-Juan Carlos Monjaraz Mexicano
-Francisco Aldair Gonzalez Galaviz 
-Carlos Javier Herrera Koppas
-Para usar el sistema: Descargar Carpeta "Manual" e Instalar el setup o usar el portable LEER: Omorfia.pdf
+## Creadores
+<p>V1:</p>
+<ul>
+  <li>Diego Rodríguez Chávez</li>
+  <li>Juan Diego Molina Rodríguez</li>
+  <li>Karen Lizbeth Álvarez Cabrera</li>
+  <li>Jesús Mario Martínez Reyna</li>
+  <li>Diogo Said Zuñiga Santoscoy</li>
+  <li>Héctor Mauricio Flores Martinez</li>
+</ul>
+<p>V2:</p>
+<ul>
+  <li>Cristopher Alan Ayala Ochoa</li>
+  <li>Dana Montserrat Cisneros Hidalgo</li>
+  <li>Juan Francisco Bailon Perez</li>
+  <li>Emiliano Cepeda Montemayor</li>
+  <li>Juan Carlos Monjaraz Mexicano</li>
+  <li>Francisco Aldair Gonzalez Galaviz</li> 
+  <li>Carlos Javier Herrera Koppas</li>
+</ul>
+<p>Para usar el sistema: Descargar Carpeta "Manual" e Instalar el setup o usar el portable</p>
+<p>LEER: <a href:"">Omorfia.pdf</a></p>
