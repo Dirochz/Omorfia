@@ -1,6 +1,7 @@
 # Omorfia
 <p>Sistema de Inventario y Ventas de una Boutique para tienda en Fisico</p>
 <p>Materia: POO y Taller de POO</p>
+
 ## Creadores
 <p>V1:</p>
 <ul>
